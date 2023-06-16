@@ -29,7 +29,7 @@ const options = {
             function handlerCountdown() {
                 timer = setInterval(() => {
                     elements.btnStart.disabled = true;
-                    const dateChoosenTime = new Date().getTime();
+                    const dateChoosenTime = new Date(elements.input.value.replace(/-/g, '/')).getTime();
                     const now = new Date().getTime();
                     const timeLeft = dateChoosenTime - now;
                     const { days, hours, minutes, seconds } = convertMs(timeLeft);
